@@ -11,4 +11,5 @@ The /src folder should contain the source code
 I have not included the node_modules folder so to run or debug this locally, please make sure angular cli is installed and run:
 
 npm install
+
 ng serve
