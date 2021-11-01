@@ -1,0 +1,11 @@
+<mat-card class="card">
+    <mat-card-subtitle>You entered:</mat-card-subtitle>
+    <mat-card-content class="content">
+       {{ value | currency }}
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <button mat-button class="button"
+        (click)="back()">Back</button>
+    </mat-card-actions>
+</mat-card>

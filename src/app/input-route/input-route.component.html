@@ -1,0 +1,27 @@
+<mat-card class="card">
+    <mat-card-subtitle>Please enter a financial number:</mat-card-subtitle>
+    <mat-card-content>
+        <form autocomplete="off" class="form">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Financial Number</mat-label>
+                <input matInput type="text" placeholder="i.e., 10m, .5b, 2.5k"
+                    (keyup.enter)="onClick($event)"
+                    (keydown.enter)="onClick($event)"
+                    [formControl]="control" 
+                    [errorStateMatcher]="matcher">
+                <mat-error *ngIf="control.hasError('invalidInput') && !control.hasError('required')">
+                    Please enter a valid financial number
+                </mat-error>
+                <mat-error *ngIf="control.hasError('required')">
+                    Financial number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button class="button"
+        [disabled]="checkButtonStatus()"
+        (click)="onClick($event)">Convert</button>
+    </mat-card-actions>
+</mat-card>
